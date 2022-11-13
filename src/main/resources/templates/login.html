@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesion</title>
+</head>
+<style>
+    input{
+        margin: 5px;
+
+    }
+    label{
+        margin: 5px;
+
+    }
+    .tarjeta{
+        background-color: beige;
+        padding: 10px;
+        max-width: fit-content;
+        margin: 0 auto;
+        border: 1px black solid;
+
+
+    }
+    .boton{
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .error{
+        background-color: darksalmon;
+        padding: 10px;
+        max-width: fit-content;
+        margin: 0 auto;
+        border: 1px black solid;
+        margin-bottom: 10px;
+    }
+    h2{
+        text-align: center;
+    }
+
+
+</style>
+<body>
+<div th:if="${param.error}">
+    <div class="error">
+        Usuario o contraseña incorrecta
+    </div>
+</div>
+
+
+<form th:action="@{/login}" method="post" >
+    <div class="tarjeta">
+        <h2>Iniciar Sesion</h2>
+    <label>Correo:</label><br>
+    <input type="email" name="username" id="email" placeholder="example@example.com" required autofocus="autofocus">
+    <br>
+    <label>Contraseña</label><br>
+    <input type="password" name="password" id="password" placeholder="Ingrese contraseña" required autofocus="autofocus">
+    <br>
+        <div class="boton"><button  type="submit">Aceptar</button></div>
+
+    </div>
+</form>
+</body>
+</html>

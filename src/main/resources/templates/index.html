@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de ventas</title>
+</head>
+<style>
+  .tarjeta{
+    background-color: beige;
+    padding: 10px;
+    max-width: fit-content;
+    margin: 0 auto;
+    border: 1px black solid;}
+
+  table {
+      width: 500px;
+      border: none;
+      border-collapse:collapse;
+  }
+   th,td {
+
+      border: 1px solid #000;
+       border-collapse: collapse;
+
+  }
+   tr{
+       height: 1em;
+   }
+
+
+   .divTproductos{
+       display:inline;
+
+   }
+   .divTventa{
+       display:inline;
+       float: right;
+
+   }
+  .typebutton {
+      font: 14px Arial;
+      text-decoration: none;
+      background-color: #EEEEEE;
+      color: #333333;
+      padding: 2px;
+      border-top: 1px solid #CCCCCC;
+      border-right: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      border-left: 1px solid #CCCCCC;
+  }
+
+  .typebutton:hover{
+      background-color: #EEEDDD;
+  }
+
+</style>
+<body>
+
+    <div class="tarjeta">
+        <button>Nueva venta</button> <a class="typebutton"  th:href="@{/logout}">Cerrar Sesion</a>
+        <form th:action="@{/cventas}" method="post" >
+            <h3>Consulta de ventas</h3>
+        <label>Folio de venta:</label><br>
+
+        <input type="number" name="folioventa"  placeholder="Ejemplo:65547" required autofocus="autofocus"> <button  type="submit">Consultar</button>
+        </form>
+        <h4>Listado de productos</h4>
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+            <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+        </table>
+        <div class="divTproductos">
+        <label>Total de productos:</label><u id="Tproductos" ></u>
+        </div>
+
+        <div class="divTventa">
+        <label>Total de venta:</label><u id="Tventas"></u>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>
